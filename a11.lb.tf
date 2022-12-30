@@ -20,7 +20,7 @@ resource "azurerm_lb" "web_lb" {
 }
 
 #create backend address pool
-resource "azurerm_lb_backend_address_pol" "web_lb_backend_address_pool" {
+resource "azurerm_lb_backend_address_pool" "web_lb_backend_address_pool" {
     name = "web-backedn"
     loadbalancer_id = azurerm_lb.web_lb.id
 }
