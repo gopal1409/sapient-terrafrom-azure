@@ -24,8 +24,8 @@ resource "azurerm_subnet_network_security_group_association" "web_subnet_nsg_ass
 locals {
   web_inbound_port = {
   "110":"80",
-  "110":"443",
-  "120": "22"
+  "120":"443",
+  "130": "22"
   }
   ##in terraform if your key start with a numeric  then the difference between key and value need to put :
 }
