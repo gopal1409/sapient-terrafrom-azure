@@ -23,7 +23,7 @@ resource "azurerm_linux_virtual_machine" "example" {
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
 
-  size                = "Standard_DS1-v2"
+  size                = "Standard_DS1_v2"
   admin_username      = "azureuser"
   network_interface_ids = [
     azurerm_network_interface.web_linuxvm_nic.id,
