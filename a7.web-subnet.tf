@@ -14,7 +14,58 @@ resource "azurerm_network_security_group" "web_subnet_nsg" {
 }
 
 #the top level nsg we will assoicate with subnet
-resource "azurerm_subnet_network_security_group_association" "example" {
+resource "azurerm_subnet_network_security_group_association" "web_subnet_nsg_associate" {
+    depends_on = [
+      azurerm_network_security_rule.web_nsg_rule_inbound
+    ]
   subnet_id                 = azurerm_subnet.websubnet.id
   network_security_group_id = azurerm_network_security_group.web_subnet_nsg.id
 }
+locals {
+  web_inbound_port = 
+  "110":"80",
+  "110":"443",
+  "120": "22"
+  ##in terraform if your key start with a numeric  then the difference between key and value need to put :
+}
+resource "azurerm_network_security_rule" "web_nsg_rule_inbound" {
+  for_each = local.web_inbound_port
+  name                        = "Rule-Port-${each.value}"
+  priority                    = each.key
+  direction                   = "Inbound"
+  access                      = "Allow"
+  protocol                    = "Tcp"
+  source_port_range           = "*"
+  destination_port_range      = each.value
+  source_address_prefix       = "*"
+  destination_address_prefix  = "*"
+  resource_group_name         = azurerm_resource_group.rg.name
+  network_security_group_name = azurerm_network_security_group.web_subnet_nsg.name
+}
+###we will create security rule
+/*resource "azurerm_network_security_rule" "example1" {
+  name                        = "test123"
+  priority                    = 100
+  direction                   = "Outbound"
+  access                      = "Allow"
+  protocol                    = "Tcp"
+  source_port_range           = "*"
+  destination_port_range      = "80"
+  source_address_prefix       = "*"
+  destination_address_prefix  = "*"
+  resource_group_name         = azurerm_resource_group.example.name
+  network_security_group_name = azurerm_network_security_group.example.name
+}
+resource "azurerm_network_security_rule" "example1" {
+  name                        = "test1231"
+  priority                    = 120
+  direction                   = "Outbound"
+  access                      = "Allow"
+  protocol                    = "Tcp"
+  source_port_range           = "*"
+  destination_port_range      = "22"
+  source_address_prefix       = "*"
+  destination_address_prefix  = "*"
+  resource_group_name         = azurerm_resource_group.example.name
+  network_security_group_name = azurerm_network_security_group.example.name
+}*/
