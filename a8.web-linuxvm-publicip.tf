@@ -2,7 +2,7 @@ resource "random_string" "myrandom" {
   length = 5
   upper = false 
   special = false
-  number = false
+  numeric = false
 }
 resource "azurerm_public_ip" "example" {
   name                = "${var.web_subnet_name}-web-linuxvm-publicip"
