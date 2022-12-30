@@ -10,5 +10,5 @@ resource "azurerm_public_ip" "example" {
   resource_group_name = azurerm_resource_group.rg.name
   allocation_method   = "Static"
   sku = "Standard"
-  domain_name_label = "app1-vm${random_string.random}"
+  domain_name_label = "app1-vm${random_string.myrandom}"
 }
