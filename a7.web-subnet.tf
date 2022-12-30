@@ -43,30 +43,3 @@ resource "azurerm_network_security_rule" "web_nsg_rule_inbound" {
   resource_group_name         = azurerm_resource_group.rg.name
   network_security_group_name = azurerm_network_security_group.web_subnet_nsg.name
 }
-###we will create security rule
-/*resource "azurerm_network_security_rule" "example1" {
-  name                        = "test123"
-  priority                    = 100
-  direction                   = "Outbound"
-  access                      = "Allow"
-  protocol                    = "Tcp"
-  source_port_range           = "*"
-  destination_port_range      = "80"
-  source_address_prefix       = "*"
-  destination_address_prefix  = "*"
-  resource_group_name         = azurerm_resource_group.example.name
-  network_security_group_name = azurerm_network_security_group.example.name
-}
-resource "azurerm_network_security_rule" "example1" {
-  name                        = "test1231"
-  priority                    = 120
-  direction                   = "Outbound"
-  access                      = "Allow"
-  protocol                    = "Tcp"
-  source_port_range           = "*"
-  destination_port_range      = "22"
-  source_address_prefix       = "*"
-  destination_address_prefix  = "*"
-  resource_group_name         = azurerm_resource_group.example.name
-  network_security_group_name = azurerm_network_security_group.example.name
-}*/
