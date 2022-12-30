@@ -44,3 +44,9 @@ resource "azurerm_lb_rule" "web_lb_rule_app1" {
   backend_address_pool_ids = [azurerm_lb_backend_address_pool.web_lb_backend_address_pool.id]
   probe_id = azurerm_lb_probe.web_lb_probe.id
 }
+
+resource "azurerm_network_interface_backend_address_pool_association" "web_nic_lb_associate" {
+  network_interface_id = azurerm_network_interface.web_linuxvm_nic.id 
+  ip_configuration_name = azurerm_network_interface.web_linuxvm_nic.ip_configuration[0].name
+  backend_address_pool_id = azurerm_lb_backend_address_pool.web_lb_backend_address_pool.id
+}
