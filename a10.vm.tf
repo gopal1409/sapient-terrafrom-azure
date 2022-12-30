@@ -45,5 +45,5 @@ resource "azurerm_linux_virtual_machine" "example" {
     sku       = "83-gen2"
     version   = "latest"
   }
-  custom_data = base64encode(loca.webvm_custom_data)
+  custom_data = base64encode(local.webvm_custom_data)
 }
