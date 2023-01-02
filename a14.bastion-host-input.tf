@@ -1,4 +1,4 @@
-variable "bastion_service_subnet_name" {\
+variable "bastion_service_subnet_name" {
 type = string
   default = "AzureBastionSubnet"
 }
