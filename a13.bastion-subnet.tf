@@ -19,7 +19,7 @@ resource "azurerm_subnet_network_security_group_association" "bastion_subnet_nsg
       azurerm_network_security_rule.bastion_nsg_rule_inbound
     ]
   subnet_id                 = azurerm_subnet.websubnet.id
-  network_security_group_id = azurerm_network_security_group.web_subnet_nsg.id
+  network_security_group_id = azurerm_network_security_group.bastion_subnet_nsg.id
 }
 locals {
   bastion_inbound_port = {
