@@ -11,13 +11,14 @@ terraform {
     null = {
       source = "hashicorp/null"
     }
-    backend "azurerm" {
+    
+  }
+  backend "azurerm" {
       resource_group_name = "terraformstorage"
       storage_account_name = "terraformtfstate009"
       container_name = "terraformstate201"
       key = "project-1-eastus-teraform.tfstate"
     }
-  }
 }
 
 # Configure the Microsoft Azure Provider
