@@ -1,4 +1,4 @@
-resource "azurerm_public_ip" "bastion_host_public_ip" {
+/*resource "azurerm_public_ip" "bastion_host_public_ip" {
   name                = "${var.web_subnet_name}-bastion-publicip"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
@@ -47,4 +47,4 @@ resource "azurerm_linux_virtual_machine" "bastion_host_linuxvm" {
     version   = "latest"
   }
   #custom_data = base64encode(local.webvm_custom_data)
-}
+}*/

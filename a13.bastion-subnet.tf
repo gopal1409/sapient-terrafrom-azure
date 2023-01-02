@@ -1,4 +1,4 @@
-##3we will create subnet
+/*##3we will create subnet
 resource "azurerm_subnet" "bastionsubnet" {
   name                 = "${local.resource_name_prefix}-${var.bastion_subnet_name}"
   resource_group_name  = azurerm_resource_group.rg.name
@@ -43,3 +43,4 @@ resource "azurerm_network_security_rule" "bastion_nsg_rule_inbound" {
   resource_group_name         = azurerm_resource_group.rg.name
   network_security_group_name = azurerm_network_security_group.bastion_subnet_nsg.name
 }
+*/
