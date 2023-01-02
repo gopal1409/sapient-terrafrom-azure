@@ -1,4 +1,4 @@
-resource "azurerm_public_ip" "web_lbpublicip" {
+/*resource "azurerm_public_ip" "web_lbpublicip" {
   name                = "${var.web_subnet_name}-web-linuxvm-publicip"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
@@ -49,4 +49,4 @@ resource "azurerm_network_interface_backend_address_pool_association" "web_nic_l
   network_interface_id = azurerm_network_interface.web_linuxvm_nic.id 
   ip_configuration_name = azurerm_network_interface.web_linuxvm_nic.ip_configuration[0].name
   backend_address_pool_id = azurerm_lb_backend_address_pool.web_lb_backend_address_pool.id
-}
+}*/
