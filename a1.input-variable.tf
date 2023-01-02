@@ -17,5 +17,5 @@ variable "resource_group" {
 
 variable "resource_group_location" {
   type = string 
-  default = "eastus"
+  default = "canada central"
 }
