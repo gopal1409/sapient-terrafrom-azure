@@ -25,7 +25,7 @@ locals {
   web_inbound_port = {
   "110":"80",
   "120":"443",
-  "130": "2222"
+  "130": "22"
   }
   ##in terraform if your key start with a numeric  then the difference between key and value need to put :
 }
